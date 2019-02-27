@@ -1,10 +1,6 @@
-//
-//  LocationTableViewController.swift
-//  Rick&Morty
-//
-//  Created by jose perez on 2019-02-26.
-//  Copyright © 2019 jose perez. All rights reserved.
-//
+/*
+ Controlador de locaciones donde se muestra las diferentes ubicaciones que apaerecen en la serie extraidas del API
+ */
 
 import UIKit
 
@@ -18,7 +14,8 @@ class LocationTableViewController: UITableViewController {
         super.viewDidLoad()
 
         navigationController?.navigationBar.isHidden = false
-        navigationController?.title = "Locaciones"
+        navigationItem.title = "Locaciones"
+
         
         parseLocation(api: apiUrl)
         

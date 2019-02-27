@@ -1,10 +1,6 @@
-//
-//  DetailCharacterTableViewController.swift
-//  Rick&Morty
-//
-//  Created by jose perez on 2019-02-26.
-//  Copyright © 2019 jose perez. All rights reserved.
-//
+/*
+ Controlador de detalle de personaje, se obtiene la informacion del controlador pasado y se extrae la imagen mediante RULSession y DispatchQueue(este extrae la imagen asycontronicamente)
+ */
 
 import UIKit
 
@@ -16,8 +12,9 @@ class DetailCharacterTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //asigancion de titulo
+        navigationItem.title = "Detalles"
 
-        navigationController?.title = "Informacion"
     }
 
     // MARK: - Table view data source
@@ -26,7 +23,7 @@ class DetailCharacterTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of sections
         return 2
     }
-
+    //Se divide la tabla en dos secciones informacion del personaje y episodios donde aparecen
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         if section ==  0 {
@@ -35,6 +32,7 @@ class DetailCharacterTableViewController: UITableViewController {
             return (personaje.episode?.count)!
         }
     }
+    //Se asigna titulo al de episodios
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
             return ""
@@ -42,6 +40,7 @@ class DetailCharacterTableViewController: UITableViewController {
             return "Episodios"
         }
     }
+    //Se crean don tipos de celda, una especializada para el personaje y otra para episodios
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "header") as? DetailCharacterTableViewCell
@@ -68,18 +67,21 @@ class DetailCharacterTableViewController: UITableViewController {
         }
         
     }
+    
+    //Se descarga, y se agusta el tamaño de la imagen para agustarla al tamaño deseado
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
         guard let url = URL(string: personaje.image!) else {
             return
         }
+        
         URLSession.shared.dataTask(with: url, completionHandler: {(data,response,error) in
             DispatchQueue.main.async {
                 
                 guard let image = data else {
                     return
                 }
-                
+                //Extracion de la imagen y ajueste a valores constantes
                 self.personajeImagen = UIImage(data: image)
                 
                 let size = self.personajeImagen.size

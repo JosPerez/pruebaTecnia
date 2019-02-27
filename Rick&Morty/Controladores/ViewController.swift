@@ -1,10 +1,6 @@
-//
-//  ViewController.swift
-//  Rick&Morty
-//
-//  Created by jose perez on 2019-02-25.
-//  Copyright © 2019 jose perez. All rights reserved.
-//
+/*
+ Este View controller contiene la inicializacion de los botones para pasar a las diferentes tablas donde se obtendra la informacion
+ */
 
 import UIKit
 
@@ -14,16 +10,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var episodioView: UIView!
     @IBOutlet weak var locacionView: UIView!
     
-    //Variables --- declarativas
-    var personajes:[character] = []
-    var episodios:[chapter] = []
-    var locaciones:[location] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //Ocultar barra y vistas
-        navigationController?.navigationBar.isHidden = true
         personajeView.backgroundColor = .white
         episodioView.backgroundColor = .white
         locacionView.backgroundColor = .white
@@ -39,7 +29,10 @@ class ViewController: UIViewController {
         locacionView.addGestureRecognizer(locationTap)
     
     }
-    
+    //ocultar barra
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
+    }
    
     
     //manejadores de accion pasar controladores
@@ -53,9 +46,5 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "locaciones", sender: self)
     }
     
-    //Pasar informacion entre controlladores
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //code here------
-    }
 }
 

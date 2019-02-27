@@ -1,24 +1,22 @@
-//
-//  ChapterTableViewController.swift
-//  Rick&Morty
-//
-//  Created by jose perez on 2019-02-26.
-//  Copyright © 2019 jose perez. All rights reserved.
-//
+/*
+ Controlador para episodios de la serie los cuales contienen nombre, temporada y numero de capitulo y dia de estreno
+ */
 
 import UIKit
 
 class ChapterTableViewController: UITableViewController {
     
+    //Variables de control y almacenamiento de informacion tipo episodio ademas del api privada
     var episodio:[chapter] = []
     var limitRequest = 99
     let itemrequest = 20
     private var apiUrl = "https://rickandmortyapi.com/api/episode/"
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //mostrar la barra y asignar titulo
         navigationController?.navigationBar.isHidden = false
-        navigationController?.title = "Episodio"
+        navigationItem.title = "Episodios"
         
         parseChapter(api: apiUrl)
     }
@@ -90,13 +88,6 @@ class ChapterTableViewController: UITableViewController {
         }
     }
     
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
     
 
 }
