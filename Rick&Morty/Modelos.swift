@@ -27,6 +27,7 @@ struct character:Decodable{
     var gender:String?
     var origin:ubicacion?
     var location:ubicacion?
+    var episode:[String]?
     var image:String?
     var url:String?
     
@@ -38,16 +39,12 @@ struct characterInfo: Decodable {
 }
 //Estructura para Episodios
 struct chapter : Decodable {
-    var id:Int?
-    var name:String?
-    var airDate:String?
-    var episode:String?
-    var url:String?
+    var id:Int
+    var name:String
+    var airDate:String
+    var episode:String
+    var url:String
     
-   private enum codingKeys: String,CodingKey {
-        case airDate = "air_date"
-        case id,name,episode,url
-    }
 }
 
 struct chapterInfo: Decodable {

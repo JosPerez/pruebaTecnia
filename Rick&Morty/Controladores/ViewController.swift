@@ -47,10 +47,10 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "personajes", sender: self)
     }
     @objc func handleChapter() {
-        print("Episodio")
+        performSegue(withIdentifier: "episodios", sender: self)
     }
     @objc func handleLocation() {
-        print("Locacion")
+        performSegue(withIdentifier: "locaciones", sender: self)
     }
     
     //Pasar informacion entre controlladores

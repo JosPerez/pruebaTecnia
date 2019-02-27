@@ -10,6 +10,10 @@
 		07CC08E922258FC600A44B18 /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CC08E822258FC600A44B18 /* CharacterTableViewCell.swift */; };
 		07CC08EB2225C0B600A44B18 /* DetailCharacterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CC08EA2225C0B600A44B18 /* DetailCharacterTableViewController.swift */; };
 		07CC08ED2225C14100A44B18 /* DetailCharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CC08EC2225C14100A44B18 /* DetailCharacterTableViewCell.swift */; };
+		07CC08EF2226000D00A44B18 /* ChapterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CC08EE2226000D00A44B18 /* ChapterTableViewCell.swift */; };
+		07CC08F1222600DB00A44B18 /* ChapterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CC08F0222600DB00A44B18 /* ChapterTableViewController.swift */; };
+		07CC08F322261B4100A44B18 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CC08F222261B4100A44B18 /* LocationTableViewCell.swift */; };
+		07CC08F522261C1800A44B18 /* LocationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CC08F422261C1800A44B18 /* LocationTableViewController.swift */; };
 		07F329A32224A1CB0061D8E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F329A22224A1CB0061D8E2 /* AppDelegate.swift */; };
 		07F329A52224A1CB0061D8E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F329A42224A1CB0061D8E2 /* ViewController.swift */; };
 		07F329A82224A1CB0061D8E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07F329A62224A1CB0061D8E2 /* Main.storyboard */; };
@@ -23,6 +27,10 @@
 		07CC08E822258FC600A44B18 /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableViewCell.swift; sourceTree = "<group>"; };
 		07CC08EA2225C0B600A44B18 /* DetailCharacterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCharacterTableViewController.swift; sourceTree = "<group>"; };
 		07CC08EC2225C14100A44B18 /* DetailCharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCharacterTableViewCell.swift; sourceTree = "<group>"; };
+		07CC08EE2226000D00A44B18 /* ChapterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterTableViewCell.swift; sourceTree = "<group>"; };
+		07CC08F0222600DB00A44B18 /* ChapterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterTableViewController.swift; sourceTree = "<group>"; };
+		07CC08F222261B4100A44B18 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
+		07CC08F422261C1800A44B18 /* LocationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewController.swift; sourceTree = "<group>"; };
 		07F3299F2224A1CB0061D8E2 /* Rick&Morty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rick&Morty.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07F329A22224A1CB0061D8E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07F329A42224A1CB0061D8E2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +59,8 @@
 				07F329A42224A1CB0061D8E2 /* ViewController.swift */,
 				07F329B42224CB9C0061D8E2 /* CharacterTableViewController.swift */,
 				07CC08EA2225C0B600A44B18 /* DetailCharacterTableViewController.swift */,
+				07CC08F0222600DB00A44B18 /* ChapterTableViewController.swift */,
+				07CC08F422261C1800A44B18 /* LocationTableViewController.swift */,
 			);
 			path = Controladores;
 			sourceTree = "<group>";
@@ -60,6 +70,8 @@
 			children = (
 				07CC08E822258FC600A44B18 /* CharacterTableViewCell.swift */,
 				07CC08EC2225C14100A44B18 /* DetailCharacterTableViewCell.swift */,
+				07CC08EE2226000D00A44B18 /* ChapterTableViewCell.swift */,
+				07CC08F222261B4100A44B18 /* LocationTableViewCell.swift */,
 			);
 			path = Celdas;
 			sourceTree = "<group>";
@@ -166,13 +178,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07CC08F1222600DB00A44B18 /* ChapterTableViewController.swift in Sources */,
 				07F329A52224A1CB0061D8E2 /* ViewController.swift in Sources */,
 				07F329B52224CB9C0061D8E2 /* CharacterTableViewController.swift in Sources */,
 				07CC08ED2225C14100A44B18 /* DetailCharacterTableViewCell.swift in Sources */,
 				07CC08EB2225C0B600A44B18 /* DetailCharacterTableViewController.swift in Sources */,
 				07CC08E922258FC600A44B18 /* CharacterTableViewCell.swift in Sources */,
+				07CC08F522261C1800A44B18 /* LocationTableViewController.swift in Sources */,
+				07CC08F322261B4100A44B18 /* LocationTableViewCell.swift in Sources */,
 				07F329A32224A1CB0061D8E2 /* AppDelegate.swift in Sources */,
 				07F329B722251D890061D8E2 /* Modelos.swift in Sources */,
+				07CC08EF2226000D00A44B18 /* ChapterTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

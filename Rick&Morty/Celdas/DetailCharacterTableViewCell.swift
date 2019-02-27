@@ -20,6 +20,12 @@ class DetailCharacterTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        lbName.sizeToFit()
+        lbStatus.sizeToFit()
+        lbSpecies.sizeToFit()
+        lbGender.sizeToFit()
+        lbOrigin.sizeToFit()
+        lbLocation.sizeToFit()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

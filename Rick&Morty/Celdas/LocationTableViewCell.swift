@@ -1,5 +1,5 @@
 //
-//  CharacterTableViewCell.swift
+//  LocationTableViewCell.swift
 //  Rick&Morty
 //
 //  Created by jose perez on 2019-02-26.
@@ -8,15 +8,18 @@
 
 import UIKit
 
-class CharacterTableViewCell: UITableViewCell {
+class LocationTableViewCell: UITableViewCell {
 
     @IBOutlet weak var lbNombre: UILabel!
-    @IBOutlet weak var lbStatus: UILabel!
+    @IBOutlet weak var lbTipo: UILabel!
+    @IBOutlet weak var lbDimension: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         lbNombre.sizeToFit()
-        lbStatus.sizeToFit()
+        lbTipo.sizeToFit()
+        lbDimension.sizeToFit()
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

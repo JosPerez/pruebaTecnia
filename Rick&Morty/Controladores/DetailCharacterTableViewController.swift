@@ -17,11 +17,7 @@ class DetailCharacterTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        navigationController?.title = "Informacion"
     }
 
     // MARK: - Table view data source
@@ -36,7 +32,7 @@ class DetailCharacterTableViewController: UITableViewController {
         if section ==  0 {
              return 1
         }else {
-            return 5
+            return (personaje.episode?.count)!
         }
     }
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -62,8 +58,11 @@ class DetailCharacterTableViewController: UITableViewController {
             
         }else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "episodios")
-            
-            cell?.textLabel!.text = "1";
+            var episodeNumber = personaje.episode![indexPath.row]
+            var index = episodeNumber.range(of: "/", options: .backwards, range: nil, locale: nil)?.lowerBound
+            index = episodeNumber.index(index!, offsetBy: 1)
+            episodeNumber = episodeNumber.substring(from: index!)
+            cell?.textLabel!.text = "Episodio \(episodeNumber)";
             
             return cell!
         }
@@ -83,54 +82,29 @@ class DetailCharacterTableViewController: UITableViewController {
                 
                 self.personajeImagen = UIImage(data: image)
                 
+                let size = self.personajeImagen.size
+                
+                let widthRatio  = 110  / size.width
+                let heightRatio = 98 / size.height
+                
+                var newSize: CGSize
+                if widthRatio > heightRatio {
+                    newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
+                } else {
+                    newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
+                }
+                
+                let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+                
+                UIGraphicsBeginImageContextWithOptions(newSize, false, 0)
+                self.personajeImagen.draw(in: rect)
+                let newImage = UIGraphicsGetImageFromCurrentImageContext()
+                UIGraphicsEndImageContext()
+                self.personajeImagen = newImage
+                
                 self.tableView.reloadData()
             }
         }).resume()
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
